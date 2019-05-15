@@ -18,8 +18,13 @@ public class HelloServiceImpl implements HelloService{
 	private HelloDAO dao;
 
 	@Override
-	public void save(Hello hello) {
+	public ResponseInfo<String> save(Hello hello) {
+		ResponseInfo<String> res = new ResponseInfo<>();
 		dao.save(hello);
+		res.setCode("0000");
+		res.setMessage("操作成功");
+		res.setData("ok");
+		return res;
 	}
 
 	@Override

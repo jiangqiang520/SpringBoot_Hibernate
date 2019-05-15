@@ -26,10 +26,10 @@ public class HelloAPI {
 	
 	
 	@RequestMapping("/api/saveHello")
-	public void saveHello(@RequestParam("content")String content){
+	public ResponseInfo<String> saveHello(@RequestParam("content")String content){
 		log.info("content:"+content);
 		Hello hello = new Hello();
 		hello.setContent(content);
-		service.save(hello);
+		return service.save(hello);
 	}
 }

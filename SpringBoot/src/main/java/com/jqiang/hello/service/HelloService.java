@@ -1,11 +1,12 @@
 package com.jqiang.hello.service;
 
 import com.jqiang.hello.po.Hello;
+import com.jqiang.hello.response.ResponseInfo;
 
 public interface HelloService {
 
 	
-	public void save(Hello hello);
+	public ResponseInfo<String> save(Hello hello);
 	
 	public Hello findById(int id);
 
